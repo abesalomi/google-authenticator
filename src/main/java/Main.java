@@ -1,7 +1,12 @@
+import com.google.zxing.WriterException;
+import ge.ifgroup.googleauth.QRGenerator;
 import ge.ifgroup.googleauth.SecretGenerator;
 import ge.ifgroup.googleauth.UrlGenerator;
 import ge.ifgroup.googleauth.Verifier;
 
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -9,11 +14,20 @@ import java.util.Scanner;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, WriterException {
         SecretGenerator secretGenerator = new SecretGenerator();
         UrlGenerator urlGenerator = new UrlGenerator();
 
         urlGenerator.setSecretGenerator(secretGenerator);
+
+        QRGenerator generator = new QRGenerator();
+
+        QRGenerator qrGenerator = new QRGenerator();
+
+        qrGenerator.setKey(urlGenerator.getUrl("abesalomi", "ifgroup.ge", "IFGroup"));
+        qrGenerator.generate();
+
+        ImageIO.write(qrGenerator.generate(), "png", new File("CrunchifyQR.png"));
 
         System.out.println(secretGenerator.code());
         System.out.println(urlGenerator.getUrl("abesalomi", "ifgroup.ge", "IFGroup"));
