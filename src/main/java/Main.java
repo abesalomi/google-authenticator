@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Main {
 
-    public static void main(String[] args) throws IOException, WriterException {
+    public static void main(String[] args) throws IOException {
         SecretGenerator secretGenerator = new SecretGenerator();
         UrlGenerator urlGenerator = new UrlGenerator();
 
