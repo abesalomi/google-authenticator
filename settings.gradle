@@ -1,2 +1,4 @@
 rootProject.name = 'google-authenticator'
 
+include 'google-authenticator-toolkit'
+
