@@ -13,7 +13,7 @@ import java.security.NoSuchAlgorithmException;
  */
 public class Verifier {
 
-    public boolean verify(long code, String secret){
+    public boolean verify(long code, String secret) {
         try {
             return verifyCode(secret, code, getTimeIndex(), 5);
         }catch (Exception e){
@@ -48,7 +48,6 @@ public class Verifier {
     public boolean verifyCode(String secret, long code, long timeIndex, int variance)
             throws Exception {
         for (int i = -variance; i <= variance; i++) {
-            System.out.println(getCode(secret, timeIndex + i));
             if (getCode(secret, timeIndex + i) == code) {
                 return true;
             }
