@@ -9,4 +9,6 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile("org.springframework.boot:spring-boot-starter-web:1.2.0.RELEASE")
+    compile project('google-authenticator-toolkit')
 }

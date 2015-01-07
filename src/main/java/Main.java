@@ -1,4 +1,3 @@
-import com.google.zxing.WriterException;
 import ge.ifgroup.googleauth.QRGenerator;
 import ge.ifgroup.googleauth.SecretGenerator;
 import ge.ifgroup.googleauth.UrlGenerator;
@@ -10,7 +9,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * Created by abesalomi on 1/6/15.
+ * Created by abesalomi on 1/7/15.
  */
 public class Main {
 
@@ -19,8 +18,6 @@ public class Main {
         UrlGenerator urlGenerator = new UrlGenerator();
 
         urlGenerator.setSecretGenerator(secretGenerator);
-
-        QRGenerator generator = new QRGenerator();
 
         QRGenerator qrGenerator = new QRGenerator();
 
